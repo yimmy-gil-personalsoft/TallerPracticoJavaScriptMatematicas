@@ -14,6 +14,14 @@ const lado2Mostrar = document.querySelector('#lado2PT');
 const ladoBaseMostrar = document.querySelector('#ladoBasePT');
 const alturaMostrar = document.querySelector('#alturaPT');
 
+//altura del triangulo
+
+const lado1Altura = document.querySelector('#lado1AlturaTxt');
+//const lado2Altura = document.querySelector('#lado2AlturaTxt');
+const baseAltura = document.querySelector('#baseTrianguloAlturaTxt');
+const resultText = document.querySelector('#resultadoAlturaT');
+
+
 function calcularValoresCuadrado(){
     var resulP = parseInt(ladoCuadrado.value) * 4;
     var resulA = Math.pow(parseInt(ladoCuadrado.value),2);
@@ -46,6 +54,16 @@ function borrarDatos(){
     document.getElementById("lado1Txt").value = "";
 }
 
-
+function calcularAlturaTriangula(){
+    if(parseInt(lado1Altura.value) == parseInt(baseAltura.value)){
+        alert("No es un triangulo isosceles");
+    }else{
+        // h = raiz cuadrada(lado1**2- (b**2)/4)
+        const altura = Math.sqrt((parseInt(lado1Altura.value)**2) - ((parseInt(baseAltura.value) ** 2)) / 4);
+        //return altura;
+        resultText.innerText = "la altura es: " + altura;
+    }
+    
+}
 
 
