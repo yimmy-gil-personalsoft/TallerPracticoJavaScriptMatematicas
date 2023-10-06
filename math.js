@@ -21,6 +21,14 @@ const lado1Altura = document.querySelector('#lado1AlturaTxt');
 const baseAltura = document.querySelector('#baseTrianguloAlturaTxt');
 const resultText = document.querySelector('#resultadoAlturaT');
 
+//calcular el porcetaje
+
+const valor = document.querySelector('#valorTxt');
+const porcentaje = document.querySelector('#porcentajeTxt');
+const mostrarValor = document.querySelector('#mostarValorTxt');
+const mostrarPorcentaje = document.querySelector('#mostarPorcentajeTxt');
+const mostrarResultadoPorcentaje = document.querySelector('#mostarResultadoTxt');
+
 
 function calcularValoresCuadrado(){
     var resulP = parseInt(ladoCuadrado.value) * 4;
@@ -52,6 +60,8 @@ function borrarDatos(){
     document.getElementById("baseTrianguloTxt").value = "";
     document.getElementById("alturaTrianguloTxt").value = "";
     document.getElementById("lado1Txt").value = "";
+    document.getElementById("valorTxt").value = "";
+    document.getElementById("porcentajeTxt").value = "";
 }
 
 function calcularAlturaTriangula(){
@@ -63,7 +73,14 @@ function calcularAlturaTriangula(){
         //return altura;
         resultText.innerText = "la altura es: " + altura;
     }
-    
+}
+
+function calcularPorcentaje(){
+    const result = (parseInt(valor.value) * (100-parseInt(porcentaje.value)))/100;
+    mostrarValor.innerText = "Valor: " + valor.value;
+    mostrarPorcentaje.innerText = "Porcentaje a calcular: " + porcentaje.value;
+    mostrarResultadoPorcentaje.innerText = "El porcentaje es: "+result;
+    borrarDatos();
 }
 
 
